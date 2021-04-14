@@ -1,0 +1,100 @@
+CREATE TABLE `Hospital`.`town` (
+  `town_ID` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) ,
+  `code` VARCHAR(5) ,
+PRIMARY KEY (`town_ID`));
+
+INSERT into town values (1, "Belgrade", "11000");
+INSERT into town values (2, "Nis", "18000");
+INSERT into town values (3, "Novi Sad", "21000",);
+INSERT into town values (4, "Kragujevac", "34000");
+INSERT into town values (5, "Valjevo", "14000");
+
+CREATE TABLE `Hospital`.`visit` (
+  `visit_id` INT NOT NULL AUTO_INCREMENT,
+  `doctor_ID` INT NOT NULL AUTO_INCREMENT,
+  `patient_ID` INT NOT NULL AUTO_INCREMENT,
+  `time` DATETIME NULL ,
+  `note` VARCHAR(100) ,
+PRIMARY KEY (`visit_ID`));
+
+INSERT into visit values (1, 1, 5, '2021-04-01', "1st examination");
+INSERT into visit values (2, 2, 4, '2021-04-02', "2st examination");
+INSERT into visit values (3, 3, 3, '2021-04-03', "3st examination");
+INSERT into visit values (4, 4, 2, '2021-04-03', "2st examination");
+INSERT into visit values (5, 5, 1, '2021-04-02', "1st examination");
+INSERT into visit values (6, 20, 20, '2021-04-02', "1st examination");
+INSERT into visit values (7, 6, 10, '2021-04-01', "2st examination");
+INSERT into visit values (8, 7, 9, '2021-04-01', "3st examination");
+INSERT into visit values (9, 8, 8, '2021-04-03', "2st examination");
+INSERT into visit values (10, 9, 7, '2021-04-01', "1st examination");
+INSERT into visit values (11, 10, 6, '2021-04-01', "1st examination");
+INSERT into visit values (12, 11, 15, '2021-04-02', "2st examination");
+INSERT into visit values (13, 12, 14, '2021-04-03', "3st examination");
+INSERT into visit values (14, 13, 13, '2021-04-03', "2st examination");
+INSERT into visit values (15, 14, 12, '2021-04-02', "1st examination");
+INSERT into visit values (16, 15, 11, '2021-04-02', "1st examination");
+INSERT into visit values (17, 16, 19, '2021-04-01', "2st examination");
+INSERT into visit values (18, 17, 18, '2021-04-01', "3st examination");
+INSERT into visit values (19, 18, 17, '2021-04-03', "2st examination");
+INSERT into visit values (20, 19, 16, '2021-04-01', "1st examination");
+
+
+CREATE TABLE `Hospital`.`patient` (
+  `patient_ID` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NULL,
+  `surname` VARCHAR(50) NULL,
+  `phone` VARCHAR(50) NULL,
+  `address` CHAR(100) NULL,
+  `town_ID` INT NULL,
+PRIMARY KEY (`patient_ID`));
+INSERT into patient values (1, "Marko", "Markovic", "+381654567890", "Svetosavska", "1");
+INSERT into patient values (2, "Darko", "Petrovic", "+381654561234", "Pozeska", "1");
+INSERT into patient values (3, "Marko", "Popovic", "+381654561223", "Makedonska", "1");
+INSERT into patient values (4, "Lazar", "Markovic", "+381654561334", "Svetosavska", "1");
+INSERT into patient values (5, "Darko", "Petrovic", "+381654561233", "Pozeska", "1");
+INSERT into patient values (6, "Sasa", "Popovic", "+381654561111", "Pozeska", "2");
+INSERT into patient values (7, "Marko", "Lazarevic", "+381654562222", "Svetosavska", "2");
+INSERT into patient values (8, "Ivan", "Petrovic", "+381654563333", "Makedonska", "2");
+INSERT into patient values (9, "Darko", "Popovic", "+381654564444", "Svetosavska", "2");
+INSERT into patient values (10, "Ivan", "Lazarevic", "+381654564321", "Pozeska", "2");
+INSERT into patient values (11, "Marko", "Markovic", "+381654565678", "Svetosavska", "3");
+INSERT into patient values (12, "Darko", "Petrovic", "+381654565567", "Pozeska", "3");
+INSERT into patient values (13, "Marko", "Popovic", "+381654565778", "Makedonska", "3");
+INSERT into patient values (14, "Lazar", "Markovic", "+381654568765", "Svetosavska", "3");
+INSERT into patient values (15, "Darko", "Petrovic", "+381654568876", "Pozeska", "3");
+INSERT into patient values (16, "Sasa", "Popovic", "+381654567786", "Pozeska", "4");
+INSERT into patient values (17, "Marko", "Lazarevic", "+381654565666", "Svetosavska", "4");
+INSERT into patient values (18, "Ivan", "Petrovic", "+381654568888", "Makedonska", "4");
+INSERT into patient values (19, "Darko", "Popovic", "+381654567777", "Svetosavska", "4");
+INSERT into patient values (20, "Ivan", "Lazarevic", "+381654567655", "Pozeska", "4");
+
+CREATE TABLE `Hospital`.`doctor` (
+  `doctor_ID` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NULL,
+  `surname` VARCHAR(50) NULL,
+  `phone` VARCHAR(50) NULL,
+  `speciality` VARCHAR(50) NULL,
+  `address` CHAR(100) NULL,
+  `town_ID` INT NULL,
+PRIMARY KEY (`doctor_ID`));
+INSERT into doctor values (1, "Marko", "Markovic", "+381644567890", "Surgery" ,"Svetosavska", "1");
+INSERT into doctor values (2, "Darko", "Petrovic", "+381644561234", "Neurology" , "Pozeska", "1");
+INSERT into doctor values (3, "Marko", "Popovic", "+381644561223", "Surgery" , "Makedonska", "1");
+INSERT into doctor values (4, "Lazar", "Markovic", "+381644561334", "Psychiatry" , "Svetosavska", "1");
+INSERT into doctor values (5, "Darko", "Petrovic", "+381644561233", "Surgery" , "Pozeska", "1");
+INSERT into doctor values (6, "Sasa", "Popovic", "+381644561111", "Neurology" , "Pozeska", "2");
+INSERT into doctor values (7, "Marko", "Lazarevic", "+381644562222", "Surgery" , "Svetosavska", "2");
+INSERT into doctor values (8, "Ivan", "Petrovic", "+381644563333", "Psychiatry" , "Makedonska", "2");
+INSERT into doctor values (9, "Darko", "Popovic", "+381644564444", "Surgery" , "Svetosavska", "2");
+INSERT into doctor values (10, "Ivan", "Lazarevic", "+381644564321", "Neurology" , "Pozeska", "2");
+INSERT into doctor values (11, "Marko", "Markovic", "+381644565678", "Surgery" , "Svetosavska", "3");
+INSERT into doctor values (12, "Darko", "Petrovic", "+381644565567", "Psychiatry" , "Pozeska", "3");
+INSERT into doctor values (13, "Marko", "Popovic", "+381644565778", "Surgery" , "Makedonska", "3");
+INSERT into doctor values (14, "Lazar", "Markovic", "+381644568765", "Neurology" , "Svetosavska", "3");
+INSERT into doctor values (15, "Darko", "Petrovic", "+381644568876", "Surgery" , "Pozeska", "3");
+INSERT into doctor values (16, "Sasa", "Popovic", "+381644567786", "Psychiatry" , "Pozeska", "4");
+INSERT into doctor values (17, "Marko", "Lazarevic", "+381644565666", "Surgery" , "Svetosavska", "4");
+INSERT into doctor values (18, "Ivan", "Petrovic", "+381644568888", "Neurology" , "Makedonska", "4");
+INSERT into doctor values (19, "Darko", "Popovic", "+381644567777", "Surgery" , "Svetosavska", "4");
+INSERT into doctor values (20, "Ivan", "Lazarevic", "+381654567655", "Psychiatry" , "Pozeska", "4");
