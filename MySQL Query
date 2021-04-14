@@ -38,6 +38,26 @@ INSERT into visit values (17, 16, 19, '2021-04-01', "2st examination");
 INSERT into visit values (18, 17, 18, '2021-04-01', "3st examination");
 INSERT into visit values (19, 18, 17, '2021-04-03', "2st examination");
 INSERT into visit values (20, 19, 16, '2021-04-01', "1st examination");
+INSERT into visit values (21, 1, 5, '2021-04-02', "2st examination");
+INSERT into visit values (22, 2, 14, '2021-04-03', "3st examination");
+INSERT into visit values (23, 3, 13, '2021-04-04', "4st examination");
+INSERT into visit values (24, 4, 2, '2021-04-04', "3st examination");
+INSERT into visit values (25, 5, 11, '2021-04-03', "2st examination");
+INSERT into visit values (26, 20, 20, '2021-04-03', "2st examination");
+INSERT into visit values (27, 6, 10, '2021-04-02', "3st examination");
+INSERT into visit values (28, 17, 9, '2021-04-02', "4st examination");
+INSERT into visit values (29, 8, 8, '2021-04-04', "3st examination");
+INSERT into visit values (30, 19, 7, '2021-04-02', "2st examination");
+INSERT into visit values (31, 10, 6, '2021-04-02', "2st examination");
+INSERT into visit values (32, 1, 15, '2021-04-04', "3st examination");
+INSERT into visit values (33, 2, 14, '2021-04-04', "4st examination");
+INSERT into visit values (34, 13, 3, '2021-04-04', "3st examination");
+INSERT into visit values (35, 14, 1, '2021-04-03', "2st examination");
+INSERT into visit values (36, 15, 1, '2021-04-03', "2st examination");
+INSERT into visit values (37, 1, 19, '2021-04-02', "3st examination");
+INSERT into visit values (38, 17, 18, '2021-04-02', "4st examination");
+INSERT into visit values (39, 8, 17, '2021-04-04', "3st examination");
+INSERT into visit values (40, 19, 16, '2021-04-02', "2st examination");
 
 
 CREATE TABLE `Hospital`.`patient` (
